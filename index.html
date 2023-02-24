@@ -9,16 +9,17 @@
 </head>
 <body>
 
+    <!-- Logo -->
+    <br>
+    <img src="./imagens/atacadao-logo.png" class="logo" alt="">
+
     <!-- Devolução / Retirada -->
-    <section>
-        <br>
-        <img src="./imagens/atacadao-logo.png" class="logo" alt="">
-        <br>
-        <div class="retirada-devolução-container">
-            <div class="flex space-between">
-                <a class="active">Retirada</a>
-                <a class="inactive">Devolução</a>
-            </div>
+    <section class="retirada-devolução-container">
+        <div class="flex gap-16">
+            <a class="active">Retirada</a>
+            <a class="inactive">Devolução</a>
+        </div>
+        <form class="flex space-between gap-16">
             <fieldset>
                 <label for="id">ID</label>
                 <input id="id" type="number">
@@ -27,12 +28,10 @@
                 <label for="quantidade">Quantidade</label>
                 <input id="quantidade" type="number">
             </fieldset>
-            <button>Enviar</button>
-        </div>
+            <button class="enviar">Enviar</button>
+        </form>
     </section>
-    
-    <br><br>
-    
+        
     <!-- Relatorios -->
     <section>
         <div>
