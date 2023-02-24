@@ -4,9 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Controle de Sacolas</title>
 </head>
 <body>
+
+    <!-- Devolução / Retirada -->
+    <section>
+        <br>
+        <img src="./imagens/atacadao-logo.png" class="logo" alt="">
+        <br>
+        <div class="retirada-devolução-container">
+            <div class="flex space-between">
+                <a class="active">Retirada</a>
+                <a class="inactive">Devolução</a>
+            </div>
+            <fieldset>
+                <label for="id">ID</label>
+                <input id="id" type="number">
+            </fieldset>
+            <fieldset>
+                <label for="quantidade">Quantidade</label>
+                <input id="quantidade" type="number">
+            </fieldset>
+            <button>Enviar</button>
+        </div>
+    </section>
     
+    <br><br>
+    
+    <!-- Relatorios -->
+    <section>
+        <div>
+            <form action="/action_page.php">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#000000" viewBox="0 0 256 256"><rect width="25" height="25" fill="none"></rect><polyline points="208 96 128 176 48 96" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline></svg>
+                    <label for="relatorio">Selecione a data do relatorio</label>
+                </div>
+                <select name="relatorio">
+                    <?php 
+                    $sql = mysqli_query($connection, "SELECT data FROM relatorio");
+                    while ($row = $sql->fetch_assoc()){
+                    echo "<option value=\"relatorio\">" . $row['dias'] . "</option>";
+                    }
+                    ?>
+                    </select>
+                <br><br>
+              </form>              
+        </div>
+
+        <div>
+            <label for="results"></label>
+        </div>
+    </section>
 </body>
 </html>
